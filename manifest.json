@@ -1,0 +1,34 @@
+{
+  "name": "TempCollects",
+  "version": "0.01",
+  "description": "use shortcut key (ctrl+q) to collect current page, 用快捷键Ctrl+q暂存当前页面",
+  "icons": {
+    "16": "images/ico16.png",
+    "32": "images/ico32.png",
+    "48": "images/ico48.png",
+    "128": "images/ico128.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "bookmarks"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "commands": {
+    "collect-page": {
+      "suggested_key": {
+        "default": "Ctrl+Q"
+      },
+      "description": "collect-page"
+    }
+  },
+  "manifest_version": 2
+}
