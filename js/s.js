@@ -1,9 +1,8 @@
-chrome.bookmarks.search("TempCollects",
-    function (obj) {
-        if (obj[0] !== undefined) {
-            var id = obj[0].id
+chrome.storage.local.get({fid: '-1'},
+    function (items) {
+        if (items.fid !== -1) {
             //列出所有的已保存书签
-            chrome.bookmarks.getChildren(id,
+            chrome.bookmarks.getChildren(items.fid,
                 function (obj) {
                     var app = new Vue({
                         el: '#item_list',
@@ -16,10 +15,11 @@ chrome.bookmarks.search("TempCollects",
         } else {
             //创建书签文件夹
             chrome.bookmarks.create({'title': 'TempCollects'},
-                function () {
+                function (obj) {
+                    chrome.storage.local.set({fid: obj.id});
                 });
         }
-    })
+    });
 
 $(document).on('click',
     'a',

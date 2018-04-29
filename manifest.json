@@ -9,7 +9,8 @@
     "128": "images/ico128.png"
   },
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_title": "快速存储当前页面，加入ToList"
   },
   "background": {
     "scripts": [
@@ -19,7 +20,8 @@
   },
   "permissions": [
     "tabs",
-    "bookmarks"
+    "bookmarks",
+    "storage"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "commands": {
