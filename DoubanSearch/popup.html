@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    #search_box {
+        width: 550px;
+    }
+
+    #search_box span {
+        display: block;
+        margin: 8px;
+    }
+
+    #search_box input {
+        width: 400px;
+    }
+
+    span:last-child {
+        text-align: center;
+    }
+</style>
+<div id="search_box">
+    <span>搜索项：<input type="text" name="search_item"></span>
+    <span><lable for="is_book">是否书籍：<input type="checkbox" name="is_book" id="is_book" value="1"></lable></span>
+    <span><input type="submit" value="搜索"></span>
+</div>
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/s.js"></script>
+</html>

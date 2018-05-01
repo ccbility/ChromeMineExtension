@@ -1,0 +1,19 @@
+{
+  "name": "DoubanSearch",
+  "version": "0.01",
+  "description": "快速搜索豆瓣电影或书籍",
+  "icons": {
+    "16": "images/nav_doubanapp_6.png",
+    "32": "images/nav_doubanapp_6.png",
+    "48": "images/nav_doubanapp_6.png",
+    "128": "images/nav_doubanapp_6.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "快速搜索豆瓣电影或书籍"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "manifest_version": 2
+}
