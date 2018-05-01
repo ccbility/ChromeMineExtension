@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TempCollects</title>
+</head>
+<body>
+<style type="text/css">
+    #item_list a {
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+    }
+
+    #item_list a:hover {
+        color: #3c3;
+        font-weight: bold;
+    }
+
+    li {
+        list-style: none;
+        margin: 6px;
+    }
+
+    ul {
+        padding: 0px;
+    }
+</style>
+<div style="width: 300px;">
+    <ul id="item_list">
+        <li v-for="item in items">
+            <a v-bind:href="item.url" v-bind:data-id="item.id">{{ item.title }}</a>
+        </li>
+    </ul>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/s.js"></script>
+</body>
+</html>
