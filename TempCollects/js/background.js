@@ -25,19 +25,29 @@ chrome.bookmarks.search("TempCollects",
             //创建书签文件夹
             chrome.bookmarks.create({'title': 'TempCollects'},
                 function (obj) {
-                    chrome.storage.local.set({fid: obj.id});
+                    chrome.storage.local.set({fid: obj.id.toString()});
+
+                    //待恢复书签
+                    chrome.bookmarks.create(
+                        {
+                            'title': 'recover://',
+                            'url': 'http://123',
+                            "parentId": obj.id
+                        },
+                        function (obj) {
+                            chrome.storage.local.set({recover_id: obj.id.toString()});
+                        });
                 });
-        } else {
-            chrome.storage.local.set({fid: obj[0].id});
+
         }
-    })
+    });
 
 function updateNum() {
     chrome.storage.local.get({fid: -1},
         function (items) {
             chrome.bookmarks.getChildren(items.fid,
                 function (obj) {
-                    chrome.browserAction.setBadgeText({"text": obj.length.toString()})
+                    chrome.browserAction.setBadgeText({"text": (obj.length - 1).toString()})
                 })
         });
 }

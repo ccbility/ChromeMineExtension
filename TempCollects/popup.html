@@ -6,15 +6,18 @@
 </head>
 <body>
 <style type="text/css">
-    #item_list a {
+    a {
         text-decoration: none;
         font-size: 14px;
         display: block;
+        float: left;
+        max-width: 250px;
+        margin-bottom: 10px;
+        clear: left;
     }
 
-    #item_list a:hover {
+    a:hover {
         color: #3c3;
-        font-weight: bold;
     }
 
     li {
@@ -25,14 +28,32 @@
     ul {
         padding: 0px;
     }
+
+    .clear {
+        clear: right;
+        margin-left: 60px;
+        padding: 0 10px;
+        font-weight: bold;
+    }
+
+    #recover {
+        position: fixed;
+        right: 20px;
+        top: 20%;
+    }
 </style>
-<div style="width: 300px;">
+<div style="width: 400px;">
     <ul id="item_list">
         <li v-for="item in items">
-            <a v-bind:href="item.url" v-bind:data-id="item.id">{{ item.title }}</a>
+            <div v-if="no_recover(item)">
+                <a v-bind:href="item.url" v-bind:data-id="item.id" class="item">{{ item.title }}</a><a href="#"
+                                                                                                       class="clear">x</a>
+            </div>
         </li>
     </ul>
 </div>
+<div id="recover"><a href="#" id="recover_btn" data-is_allow="0">恢复</a></div>
+
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/vue.js"></script>
 <script src="js/s.js"></script>
