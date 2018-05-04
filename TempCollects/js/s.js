@@ -10,10 +10,7 @@ $(document).on('click',
     'a.clear',
     function () {
         var that = $(this);
-
-        console.log(that.prev().data('id'));
-        //return false;
-        chrome.bookmarks.remove(that.prev().data('id').toString());
+        chrome.bookmarks.remove(that.prev().attr('data-id').toString());
 
         chrome.storage.local.get({recover_id: '-1'},
             function (items) {
