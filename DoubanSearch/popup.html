@@ -11,8 +11,7 @@
     }
 
     #search_box span {
-        display: block;
-        margin: 8px;
+        margin: 5px 0px;
     }
 
     #search_box input {
@@ -22,11 +21,16 @@
     span:last-child {
         text-align: center;
     }
+
+    .item_header {
+        width: 80px;
+        display: inline-block;
+    }
 </style>
 <div id="search_box">
-    <span>搜索项：<input type="text" name="search_item"></span>
-    <span><lable for="is_book">是否书籍：<input type="checkbox" name="is_book" id="is_book" value="1"></lable></span>
-    <span><input type="submit" value="搜索"></span>
+    <div><span class="item_header">搜索项：</span><input type="text" name="search_item"></div>
+    <div><span class="item_header">是否书籍：</span><input type="checkbox" name="is_book" id="is_book" value="1"></div>
+    <div class="align_center"><span class="item_header"></span><input type="submit" value="搜索"></div>
 </div>
 </body>
 <script src="js/jquery-3.2.1.min.js"></script>
